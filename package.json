@@ -1,0 +1,27 @@
+{
+	"name": "parse-version-action",
+	"version": "1.0.0",
+	"description": "GitHub Action that will parse and get a version from the package.json file",
+	"main": "src/index.js",
+	"scripts": {
+		"local-test": "npx local-action . src/main.js .env",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jrm402/parse-version-action.git"
+	},
+	"keywords": [],
+	"author": "jrm402",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jrm402/parse-version-action/issues"
+	},
+	"homepage": "https://github.com/jrm402/parse-version-action#readme",
+	"dependencies": {
+		"@actions/core": "^1.11.1"
+	},
+	"devDependencies": {
+		"@github/local-action": "^2.2.1"
+	}
+}
