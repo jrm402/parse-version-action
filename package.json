@@ -1,6 +1,7 @@
 {
   "name": "parse-version-action",
   "version": "1.0.0",
+  "test-version": "1.2.3",
   "description": "GitHub Action that will parse and get a version from the package.json file",
   "scripts": {
     "local-test": "local-action . src/main.js .env",
