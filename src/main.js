@@ -1,5 +1,5 @@
 const core = require("@actions/core");
-const { context } = require("@actions/github");
+const { context, getOctokit } = require("@actions/github");
 
 async function run() {
   try {
