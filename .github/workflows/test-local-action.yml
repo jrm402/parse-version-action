@@ -18,6 +18,8 @@ jobs:
       - name: Test local action
         id: test-action
         uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Print results
       - name: Print results
