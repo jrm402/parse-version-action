@@ -1,0 +1,17 @@
+name: 'Parse Version'
+description: 'Parse and get a version from the package.json file'
+inputs:
+  version-slug:
+    description: 'Version slug - $version will be replaced with the package.json version'
+    required: false
+    default: 'v$version'
+  version-key:
+    description: 'Version key in the package.json file (If you want to use something other than the version field)'
+    required: false
+    default: 'version'
+outputs:
+  version:
+    description: 'The version-slug with $version replaced from the package.json file'
+runs:
+  using: 'node22'
+  main: 'src/index.js'
