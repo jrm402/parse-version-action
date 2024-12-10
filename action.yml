@@ -13,5 +13,5 @@ outputs:
   version:
     description: 'The version-slug with $version replaced from the package.json file'
 runs:
-  using: 'node22'
+  using: 'node20'
   main: 'src/index.js'
