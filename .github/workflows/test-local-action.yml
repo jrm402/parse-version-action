@@ -22,7 +22,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Print results
-      - name: Print results
+      - name: Print results - expected "v1.0.0" (version from package.json)
         id: output
         run: echo "${{ steps.test-action.outputs.version }}"
 
@@ -45,6 +45,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Print results
-      - name: Print results
+      - name: Print results - expected "ver-1.2.3" (version from package.json, test-version)
         id: output
         run: echo "${{ steps.test-action.outputs.version }}"
