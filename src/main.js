@@ -32,7 +32,6 @@ async function run() {
     // load version
     const verRegex = new RegExp(`"${versionKey}":\\s*"(.+)"`);
     const verMatch = verRegex.exec(pkgInfo);
-    // const verMatch = /"version":\s*"(.+)"/.exec(pkgInfo);
     if (verMatch === null || !verMatch[1]) {
       throw new Error(
         `Version key "${versionKey}" was not found in package.json.`,
