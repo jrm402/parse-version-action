@@ -26,25 +26,25 @@ jobs:
         id: output
         run: echo "${{ steps.test-action.outputs.version }}"
 
-run-action-with-inputs:
-  runs-on: ubuntu-latest
-  steps:
-    # Checkout codebase
-    - name: Checkout codebase
-      id: checkout
-      uses: actions/checkout@v4
+  run-action-with-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout codebase
+      - name: Checkout codebase
+        id: checkout
+        uses: actions/checkout@v4
 
-    # Test the action
-    - name: Test local action
-      id: test-action
-      uses: ./
-      with:
-        version-slug: "ver-$version"
-        version-key: "test-version"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Test the action
+      - name: Test local action
+        id: test-action
+        uses: ./
+        with:
+          version-slug: "ver-$version"
+          version-key: "test-version"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    # Print results
-    - name: Print results
-      id: output
-      run: echo "${{ steps.test-action.outputs.version }}"
+      # Print results
+      - name: Print results
+        id: output
+        run: echo "${{ steps.test-action.outputs.version }}"
