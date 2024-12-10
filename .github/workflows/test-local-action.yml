@@ -3,7 +3,7 @@ run-name: Test the action against a real commit on GitHub
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   run-action:
@@ -23,4 +23,3 @@ jobs:
       - name: Print results
         id: output
         run: echo "${{ steps.test-action.outputs.version }}"
-  
