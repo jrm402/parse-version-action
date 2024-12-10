@@ -12,7 +12,7 @@ This action will install `npm` and extracts the version from your `package.json`
 - uses: actions/checkout@v4
 - uses: jrm402/parse-version-action@latest
   env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 In the most basic usage, the `parse-version-action` requires only that you set the `GITHUB_TOKEN` environment variable so it can interact with the GitHub repository to read the `package.json` file.
@@ -30,9 +30,9 @@ Specify the slug value to use for the returned version. The slug `$version` is r
 ```yaml
 - uses: jrm402/parse-version-action@latest
   with:
-      version-slug: 'ver-$version'
+    version-slug: "ver-$version"
   env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 **Default value:** `v$version`
@@ -46,17 +46,17 @@ Specify the version key in the `package.json` file that should be used for the v
 ```yaml
 - uses: jrm402/parse-version-action@latest
   with:
-      version-key: 'releaseVersion'
+    version-key: "releaseVersion"
   env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 `package.json`:
 
 ```json
 {
-	"name": "sample-package",
-	"releaseVersion": "4.0.2"
+  "name": "sample-package",
+  "releaseVersion": "4.0.2"
 }
 ```
 
@@ -145,17 +145,17 @@ jobs:
     steps:
       # Gather verion details
       - name: Gather version
-	    id: get-version
-	  	uses: jrm402/parse-version-action@latest
-		with:
-		  version-slug: "ver-$version"
-		  version-key: "release-version"
-		env:
-		  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: get-version
+        uses: jrm402/parse-version-action@latest
+        with:
+          version-slug: "ver-$version"
+          version-key: "release-version"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Print results
-	  - name: Print results
-	    run: echo "${{ steps.get-version.outputs.version }}"
+      - name: Print results
+        run: echo "${{ steps.get-version.outputs.version }}"
 ```
 
 This workflow is triggered when you push changes to the `main` branch of the repository.
