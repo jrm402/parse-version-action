@@ -1,0 +1,26 @@
+name: Test Local Action
+run-name: Test the action against a real commit on GitHub
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout codebase
+      - name: Checkout codebase
+        id: checkout
+        uses: actions/checkout@v4
+
+      # Test the action
+      - name: Test local action
+        id: test-action
+        uses: ./
+
+      # Print results
+      - name: Print results
+        id: output
+        run: echo "${{ steps.test-action.outputs.version }}"
+  
