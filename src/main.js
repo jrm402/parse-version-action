@@ -30,12 +30,10 @@ async function run() {
     log("Parsing version...");
 
     // load version
-    const verRegex = new RegExp(`"${versionKey}":\s*"(.+)"`);
+    const verRegex = new RegExp(`"${versionKey}":\\s*"(.+)"`);
     const verMatch = verRegex.exec(pkgInfo);
     // const verMatch = /"version":\s*"(.+)"/.exec(pkgInfo);
     if (verMatch === null || !verMatch[1]) {
-      log(verRegex);
-      log(verMatch);
       throw new Error(
         `Version key "${versionKey}" was not found in package.json.`,
       );
@@ -90,8 +88,8 @@ async function getCommitInfo(token, path, ref) {
   return Buffer.from(data.content, "base64").toString("binary");
 }
 
-function log(...data) {
-  console.log(data);
+function log(msg) {
+  core.info(msg);
 }
 
 module.exports = {
