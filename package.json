@@ -11,7 +11,8 @@
     "lint": "",
     "package": "ncc build src/index.js -o dist --source-map --license licenses.txt --minify",
     "test": "jest",
-    "all": "npm i && npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
+    "all-orig": "npm i && npm run format:write && npm run lint && npm run test && npm run coverage && npm run package",
+    "all": "npm i && npm run format:write && npm run lint && npm run package"
   },
   "repository": {
     "type": "git",
