@@ -1,0 +1,24 @@
+name: Auto-Release Action
+run-name: Automatically create the release
+
+on:
+  workflow_run:
+    workflows: [Test Local Action]
+    types:
+      - completed
+
+jobs:
+  auto-release:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout codebase
+      - name: Checkout codebase
+        id: checkout
+        uses: actions/checkout@v4
+
+      # Create the release
+      - name: Create release
+        id: create-release
+        uses: jrm402/auto-create-release-action@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

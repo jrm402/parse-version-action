@@ -5,14 +5,13 @@
   "description": "GitHub Action that will parse and get a version from the package.json file",
   "scripts": {
     "local-test": "local-action . src/main.js .env",
-    "test2": "echo \"Error: no test specified\" && exit 1",
     "coverage": "make-coverage-badge --output-path ./badges/coverage.svg",
     "format:write": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "",
     "package": "ncc build src/index.js -o dist --source-map --license licenses.txt --minify",
     "test": "jest",
-    "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
+    "all": "npm i && npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
   },
   "repository": {
     "type": "git",
