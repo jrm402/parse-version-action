@@ -106,10 +106,10 @@ jobs:
 
       # Gather verion details
       - name: Gather version
-	    id: get-version
-	  	uses: jrm402/parse-version-action@latest
-		env:
-		  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: get-version
+        uses: jrm402/parse-version-action@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Login against a Docker registry
       - name: Log into registry ${{ env.REGISTRY }}
