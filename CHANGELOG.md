@@ -2,6 +2,18 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.2
+
+### Changes
+
+- Update the CHANGELOG file.
+
+## v1.0.1
+
+### Changes
+
+- Update README file: Remove bad tabbing in YAML.
+
 ## v1.0.0
 
 ### Changes
