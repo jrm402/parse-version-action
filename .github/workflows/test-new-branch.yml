@@ -1,0 +1,51 @@
+name: Test Local Action
+run-name: Test the action against a real commit on GitHub
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout codebase
+      - name: Checkout codebase
+        id: checkout
+        uses: actions/checkout@v4
+
+      # Test the action
+      - name: Test local action
+        id: test-action
+        uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Print results
+      - name: Print results - expected "v1.0.0" (version from package.json)
+        id: output
+        run: echo "${{ steps.test-action.outputs.version }}"
+
+  run-action-with-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout codebase
+      - name: Checkout codebase
+        id: checkout
+        uses: actions/checkout@v4
+
+      # Test the action
+      - name: Test local action
+        id: test-action
+        uses: ./
+        with:
+          version-slug: "ver-$version"
+          version-key: "test-version"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Print results
+      - name: Print results - expected "ver-1.2.3" (version from package.json, test-version)
+        id: output
+        run: echo "${{ steps.test-action.outputs.version }}"
