@@ -1,5 +1,5 @@
-name: Test Local Action
-run-name: Test the action against a real commit on GitHub
+name: Test Local Action - New Branch
+run-name: Test the action against a new branch created in GitHub (no push context)
 
 on:
   push:
