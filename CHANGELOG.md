@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.4
+
+### Changes
+
+- Debug release.
+
 ## v1.0.3
 
 ### Changes

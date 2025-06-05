@@ -23,6 +23,8 @@ async function run() {
 
 		// get commit information
 		let commitId;
+		log('sha');
+		log(context);
 		const commits = context.payload.commits;
 		if (commits != null && commits.length > 0) {
 			const commit = commits[commits.length - 1];
