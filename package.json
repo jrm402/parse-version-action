@@ -1,6 +1,6 @@
 {
 	"name": "parse-version-action",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"test-version": "1.2.3",
 	"description": "GitHub Action that will parse and get a version from the package.json file",
 	"scripts": {
