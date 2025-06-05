@@ -6,7 +6,7 @@ All changes to this project are documented in this file.
 
 ### Changes
 
-- Debug release.
+- Add better error handling when a new branch is created (push commits are not available).
 
 ## v1.0.3
 
