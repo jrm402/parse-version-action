@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.3
+
+### Changes
+
+- Add better error handling when a new branch is created (push commits are not available).
+
 ## v1.0.2
 
 ### Changes
